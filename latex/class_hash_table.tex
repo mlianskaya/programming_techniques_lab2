@@ -1,0 +1,162 @@
+\doxysection{Hash\+Table Class Reference}
+\hypertarget{class_hash_table}{}\label{class_hash_table}\index{HashTable@{HashTable}}
+
+
+Класс хэш-\/таблицы для быстрого поиска по ключу.  
+
+
+
+
+{\ttfamily \#include $<$Hash\+Table.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hash_table_a90ec781cea2379f0db4bb7fbee3d1710}{Hash\+Table}} (size\+\_\+t initial\+\_\+size=10007)
+\begin{DoxyCompactList}\small\item\em Конструктор хэш-\/таблицы. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hash_table_a9ce5569bb945880cacb29aaba6f3e3f9}{\texorpdfstring{$\sim$}{\string~}\+Hash\+Table}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. Освобождает ресурсы (списки очищаются автоматически). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hash_table_ac8737453ae358f358c6253b436f3cb3a}{insert}} (const \mbox{\hyperlink{class_applicant}{Applicant}} \&a)
+\begin{DoxyCompactList}\small\item\em Вставка абитуриента в таблицу. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_applicant}{Applicant}} $>$ \mbox{\hyperlink{class_hash_table_aeb75e3282eee50dddefa46c14b2338d9}{find}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Поиск всех абитуриентов по ключу (ФИО). \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_hash_table_a71b8dca2be787ae6f7b0c2f566d5d708}{get\+Collisions}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает общее количество коллизий. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hash_table_a94a35e0cf2ce6fa291d48138f58635ed}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Очищает таблицу (удаляет все элементы) и сбрасывает счётчик коллизий. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс хэш-\/таблицы для быстрого поиска по ключу. 
+
+
+\begin{DoxyItemize}
+\item Размер таблицы фиксирован и задаётся в конструкторе (рекомендуется простое число).
+\item Коллизии разрешаются методом цепочек\+: каждая корзина — это std\+::unordered\+\_\+map.
+\item Внутри корзины ключи уникальны, а для каждого ключа хранится вектор всех значений.
+\item Дубликаты (одинаковые ФИО) не создают коллизий, а добавляются в существующий вектор.
+\item Ведётся счётчик коллизий (сколько раз при вставке нового уникального ключа корзина уже была непуста). 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_hash_table_a90ec781cea2379f0db4bb7fbee3d1710}\label{class_hash_table_a90ec781cea2379f0db4bb7fbee3d1710} 
+\index{HashTable@{HashTable}!HashTable@{HashTable}}
+\index{HashTable@{HashTable}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{HashTable()}{HashTable()}}
+{\footnotesize\ttfamily Hash\+Table\+::\+Hash\+Table (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{initial\+\_\+size = {\ttfamily 10007} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор хэш-\/таблицы. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+\_\+size} & Начальный размер таблицы (количество корзин). Рекомендуется выбирать простое число для равномерного распределения. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_hash_table_a9ce5569bb945880cacb29aaba6f3e3f9}\label{class_hash_table_a9ce5569bb945880cacb29aaba6f3e3f9} 
+\index{HashTable@{HashTable}!````~HashTable@{\texorpdfstring{$\sim$}{\string~}HashTable}}
+\index{````~HashTable@{\texorpdfstring{$\sim$}{\string~}HashTable}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}HashTable()}{\string~HashTable()}}
+{\footnotesize\ttfamily Hash\+Table\+::\texorpdfstring{$\sim$}{\string~}\+Hash\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Деструктор. Освобождает ресурсы (списки очищаются автоматически). 
+
+Деструктор. Ресурсы освобождаются автоматически (std\+::unordered\+\_\+map очищается). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_hash_table_a94a35e0cf2ce6fa291d48138f58635ed}\label{class_hash_table_a94a35e0cf2ce6fa291d48138f58635ed} 
+\index{HashTable@{HashTable}!clear@{clear}}
+\index{clear@{clear}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Hash\+Table\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Очищает таблицу (удаляет все элементы) и сбрасывает счётчик коллизий. 
+
+Очистка хэш-\/таблицы.
+
+Размер таблицы не изменяется.
+
+Удаляет все элементы из всех корзин и сбрасывает счётчик коллизий. Размер таблицы остаётся неизменным. \Hypertarget{class_hash_table_aeb75e3282eee50dddefa46c14b2338d9}\label{class_hash_table_aeb75e3282eee50dddefa46c14b2338d9} 
+\index{HashTable@{HashTable}!find@{find}}
+\index{find@{find}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_applicant}{Applicant}} $>$ Hash\+Table\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Поиск всех абитуриентов по ключу (ФИО). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Искомое ФИО. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор копий найденных объектов. Если ключ не найден, возвращается пустой вектор.
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item Вычисляется хэш, находится корзина.
+\item В корзине выполняется поиск по ключу (за O(1) в среднем).
+\item Если ключ найден, возвращается вектор значений; иначе – пустой вектор.
+\item Сложность в среднем O(1), в худшем O(k), где k – число различных ключей в корзине. 
+\end{DoxyItemize}\Hypertarget{class_hash_table_a71b8dca2be787ae6f7b0c2f566d5d708}\label{class_hash_table_a71b8dca2be787ae6f7b0c2f566d5d708} 
+\index{HashTable@{HashTable}!getCollisions@{getCollisions}}
+\index{getCollisions@{getCollisions}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{getCollisions()}{getCollisions()}}
+{\footnotesize\ttfamily size\+\_\+t Hash\+Table\+::get\+Collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает общее количество коллизий. 
+
+\begin{DoxyReturn}{Returns}
+Количество случаев, когда при вставке нового уникального ключа корзина уже была непустой. 
+\end{DoxyReturn}
+\Hypertarget{class_hash_table_ac8737453ae358f358c6253b436f3cb3a}\label{class_hash_table_ac8737453ae358f358c6253b436f3cb3a} 
+\index{HashTable@{HashTable}!insert@{insert}}
+\index{insert@{insert}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Hash\+Table\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_applicant}{Applicant}} \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Вставка абитуриента в таблицу. 
+
+Вставка абитуриента в хэш-\/таблицу.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Объект \doxylink{class_applicant}{Applicant}.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item Вычисляется хэш от full\+Name, определяется корзина.
+\item Если ключ уже существует в корзине, объект добавляется в соответствующий вектор.
+\item Если ключ отсутствует, создаётся новая запись (ключ → вектор с одним элементом) и увеличивается счётчик коллизий, если корзина уже была непуста.
+\item Дубликаты не увеличивают счётчик коллизий.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Объект \doxylink{class_applicant}{Applicant}.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item Вычисляется индекс корзины с помощью hash().
+\item Если ключ (ФИО) уже существует в корзине, объект добавляется в существующий вектор.
+\item Если ключ отсутствует, создаётся новая запись (ключ → вектор с одним элементом).
+\item Счётчик коллизий увеличивается только когда в непустую корзину добавляется новый уникальный ключ (конфликт разных ключей). Дубликаты не считаются коллизиями. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_hash_table_8hpp}{Hash\+Table.\+hpp}}\item 
+\mbox{\hyperlink{_hash_table_8cpp}{Hash\+Table.\+cpp}}\end{DoxyCompactItemize}

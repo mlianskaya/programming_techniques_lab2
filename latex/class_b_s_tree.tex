@@ -1,0 +1,66 @@
+\doxysection{BSTree Class Reference}
+\hypertarget{class_b_s_tree}{}\label{class_b_s_tree}\index{BSTree@{BSTree}}
+
+
+Класс бинарного дерева поиска.  
+
+
+
+
+{\ttfamily \#include $<$BSTree.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_b_s_tree_a27270747121d16dc710002a0af0c5e83}{insert}} (const \mbox{\hyperlink{class_applicant}{Applicant}} \&a)
+\begin{DoxyCompactList}\small\item\em Вставка абитуриента в дерево. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_applicant}{Applicant}} $>$ \mbox{\hyperlink{class_b_s_tree_a14d33e1105cb8e461e9053bb6ff7a5cb}{find}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Поиск всех абитуриентов по ключу (ФИО). \end{DoxyCompactList}\item 
+\Hypertarget{class_b_s_tree_ad0919806c4c9897579ae0af91c09f012}\label{class_b_s_tree_ad0919806c4c9897579ae0af91c09f012} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Очистка дерева. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс бинарного дерева поиска. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_b_s_tree_a14d33e1105cb8e461e9053bb6ff7a5cb}\label{class_b_s_tree_a14d33e1105cb8e461e9053bb6ff7a5cb} 
+\index{BSTree@{BSTree}!find@{find}}
+\index{find@{find}!BSTree@{BSTree}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_applicant}{Applicant}} $>$ BSTree\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Поиск всех абитуриентов по ключу (ФИО). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Искомое ФИО. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор копий найденных объектов (может быть пустым). 
+\end{DoxyReturn}
+\Hypertarget{class_b_s_tree_a27270747121d16dc710002a0af0c5e83}\label{class_b_s_tree_a27270747121d16dc710002a0af0c5e83} 
+\index{BSTree@{BSTree}!insert@{insert}}
+\index{insert@{insert}!BSTree@{BSTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void BSTree\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_applicant}{Applicant}} \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Вставка абитуриента в дерево. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Объект \doxylink{class_applicant}{Applicant}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_b_s_tree_8hpp}{BSTree.\+hpp}}\item 
+\mbox{\hyperlink{_b_s_tree_8cpp}{BSTree.\+cpp}}\end{DoxyCompactItemize}

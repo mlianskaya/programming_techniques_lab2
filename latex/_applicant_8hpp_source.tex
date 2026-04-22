@@ -1,0 +1,30 @@
+\doxysection{Applicant.\+hpp}
+\hypertarget{_applicant_8hpp_source}{}\label{_applicant_8hpp_source}\mbox{\hyperlink{_applicant_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_applicant}{Applicant}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ \mbox{\hyperlink{class_applicant_a6dae2c236ed47e1e10d711383f70118a}{fullName}};\ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ \mbox{\hyperlink{class_applicant_a8b80f6abd38f47de1882e13fe63a3d57}{faculty}};\ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ \mbox{\hyperlink{class_applicant_a363fb67399fb7ef86bc59964c78bea5b}{specialty}};\ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_applicant_a237adbbbcc90825f26ffa0118e0c324a}{totalScore}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_applicant_a48a7ad2d8e806bab66f8046cbcea7120}{Applicant}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_applicant_a48a7ad2d8e806bab66f8046cbcea7120}{Applicant}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ fac,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ spec,\ \textcolor{keywordtype}{int}\ score);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_applicant}{Applicant}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator>(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_applicant}{Applicant}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_applicant}{Applicant}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator>=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_applicant}{Applicant}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_applicant}{Applicant}}\&\ a);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\&\ operator>>(std::istream\&\ is,\ \mbox{\hyperlink{class_applicant}{Applicant}}\&\ a);}
+\DoxyCodeLine{00054\ \};}
+
+\end{DoxyCode}

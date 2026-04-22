@@ -1,0 +1,102 @@
+\doxysection{Applicant Class Reference}
+\hypertarget{class_applicant}{}\label{class_applicant}\index{Applicant@{Applicant}}
+
+
+Класс, описывающий абитуриента.  
+
+
+
+
+{\ttfamily \#include $<$Applicant.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_applicant_a48a7ad2d8e806bab66f8046cbcea7120}\label{class_applicant_a48a7ad2d8e806bab66f8046cbcea7120} 
+{\bfseries Applicant} ()
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_applicant_a4d7b5d9b37ca711331f5ccca3c13562a}{Applicant}} (const std\+::string \&name, const std\+::string \&fac, const std\+::string \&spec, int score)
+\begin{DoxyCompactList}\small\item\em Конструктор с параметрами. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Операторы сравнения}\par
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_applicant_a565c1e0252ea9654ff7e37db153279c6}\label{class_applicant_a565c1e0252ea9654ff7e37db153279c6} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{class_applicant}{Applicant}} \&other) const
+\item 
+\Hypertarget{class_applicant_a76c113bd46cfdc9aee9a7e3657e0ded2}\label{class_applicant_a76c113bd46cfdc9aee9a7e3657e0ded2} 
+bool {\bfseries operator$>$} (const \mbox{\hyperlink{class_applicant}{Applicant}} \&other) const
+\item 
+\Hypertarget{class_applicant_a0619c042127a212581887dc937f781ed}\label{class_applicant_a0619c042127a212581887dc937f781ed} 
+bool {\bfseries operator$<$=} (const \mbox{\hyperlink{class_applicant}{Applicant}} \&other) const
+\item 
+\Hypertarget{class_applicant_ad4380c97dfa1486ddf22284f4c60de74}\label{class_applicant_ad4380c97dfa1486ddf22284f4c60de74} 
+bool {\bfseries operator$>$=} (const \mbox{\hyperlink{class_applicant}{Applicant}} \&other) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_applicant_a6dae2c236ed47e1e10d711383f70118a}\label{class_applicant_a6dae2c236ed47e1e10d711383f70118a} 
+std\+::string {\bfseries full\+Name}
+\begin{DoxyCompactList}\small\item\em ФИО абитуриента \end{DoxyCompactList}\item 
+\Hypertarget{class_applicant_a8b80f6abd38f47de1882e13fe63a3d57}\label{class_applicant_a8b80f6abd38f47de1882e13fe63a3d57} 
+std\+::string {\bfseries faculty}
+\begin{DoxyCompactList}\small\item\em Факультет \end{DoxyCompactList}\item 
+\Hypertarget{class_applicant_a363fb67399fb7ef86bc59964c78bea5b}\label{class_applicant_a363fb67399fb7ef86bc59964c78bea5b} 
+std\+::string {\bfseries specialty}
+\begin{DoxyCompactList}\small\item\em Специальность \end{DoxyCompactList}\item 
+\Hypertarget{class_applicant_a237adbbbcc90825f26ffa0118e0c324a}\label{class_applicant_a237adbbbcc90825f26ffa0118e0c324a} 
+int {\bfseries total\+Score}
+\begin{DoxyCompactList}\small\item\em Сумма баллов \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{Indent}\textbf{ Ввод/вывод в формате CSV}\par
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_applicant_a7d3e035fd5d99a9d0605d9a4a3cd25d0}\label{class_applicant_a7d3e035fd5d99a9d0605d9a4a3cd25d0} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_applicant}{Applicant}} \&a)
+\item 
+\Hypertarget{class_applicant_a11f5a54e1d69aff4d78cef50e49fef5b}\label{class_applicant_a11f5a54e1d69aff4d78cef50e49fef5b} 
+std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&is, \mbox{\hyperlink{class_applicant}{Applicant}} \&a)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Класс, описывающий абитуриента. 
+
+Поля\+: ФИО, факультет, специальность, сумма баллов. Сравнение выполняется по правилам варианта 16\+:
+\begin{DoxyItemize}
+\item сначала сумма баллов по убыванию,
+\item затем ФИО по возрастанию,
+\item затем факультет по возрастанию,
+\item затем специальность по возрастанию. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_applicant_a4d7b5d9b37ca711331f5ccca3c13562a}\label{class_applicant_a4d7b5d9b37ca711331f5ccca3c13562a} 
+\index{Applicant@{Applicant}!Applicant@{Applicant}}
+\index{Applicant@{Applicant}!Applicant@{Applicant}}
+\doxysubsubsection{\texorpdfstring{Applicant()}{Applicant()}}
+{\footnotesize\ttfamily Applicant\+::\+Applicant (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{fac,  }\item[{const std\+::string \&}]{spec,  }\item[{int}]{score }\end{DoxyParamCaption})}
+
+
+
+Конструктор с параметрами. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & ФИО \\
+\hline
+{\em fac} & Факультет \\
+\hline
+{\em spec} & Специальность \\
+\hline
+{\em score} & Сумма баллов \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_applicant_8hpp}{Applicant.\+hpp}}\item 
+\mbox{\hyperlink{_applicant_8cpp}{Applicant.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,45 @@
+\doxysection{RBTree.\+hpp}
+\hypertarget{_r_b_tree_8hpp_source}{}\label{_r_b_tree_8hpp_source}\mbox{\hyperlink{_r_b_tree_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_applicant_8hpp}{Applicant.hpp}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\ \{\ RED,\ BLACK\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_r_b_node}{RBNode}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_r_b_node_af017529faedece4e653a551db7be374b}{key}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<Applicant>\ \mbox{\hyperlink{struct_r_b_node_ad720e555a6a7b663f34230a0bd6c7f3c}{values}};\ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{struct_r_b_node}{RBNode}}*\ \mbox{\hyperlink{struct_r_b_node_a3345545f8a1678010bca11b5f7153a4a}{left}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{struct_r_b_node}{RBNode}}*\ \mbox{\hyperlink{struct_r_b_node_af82826872827c548a5713eb84f264767}{right}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{struct_r_b_node}{RBNode}}*\ \mbox{\hyperlink{struct_r_b_node_a131e0d1a4f73d55e6b5ad282c6846612}{parent}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\ \mbox{\hyperlink{struct_r_b_node_a0877ab978b0055833f3a5266491f1f2e}{color}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{struct_r_b_node_adf1effb89c3d9f80693c7cf4ba7b03e2}{RBNode}}(\textcolor{keyword}{const}\ std::string\&\ k,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_applicant}{Applicant}}\&\ a)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_r_b_node_af017529faedece4e653a551db7be374b}{key}}(k),\ \mbox{\hyperlink{struct_r_b_node_a3345545f8a1678010bca11b5f7153a4a}{left}}(nullptr),\ \mbox{\hyperlink{struct_r_b_node_af82826872827c548a5713eb84f264767}{right}}(nullptr),\ \mbox{\hyperlink{struct_r_b_node_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}(nullptr),\ \mbox{\hyperlink{struct_r_b_node_a0877ab978b0055833f3a5266491f1f2e}{color}}(RED)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_r_b_node_ad720e555a6a7b663f34230a0bd6c7f3c}{values}}.push\_back(a);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_r_b_tree}{RBTree}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_r_b_tree}{RBTree}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_r_b_tree_abab51e54e07c1adf0ca0c9a5d466427b}{\string~RBTree}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_r_b_tree_af371b07adf568b48d4343fb896a35f0f}{insert}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_applicant}{Applicant}}\&\ a);}
+\DoxyCodeLine{00049\ \ \ \ \ std::vector<Applicant>\ \mbox{\hyperlink{class_r_b_tree_a8cb1e4a263752feba6e1eda46bd0cc2f}{find}}(\textcolor{keyword}{const}\ std::string\&\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_r_b_tree_aa0127eced84667918a344ee7739b9811}{clear}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{struct_r_b_node}{RBNode}}*\ root;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ rotateLeft(\mbox{\hyperlink{struct_r_b_node}{RBNode}}*\ x);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ rotateRight(\mbox{\hyperlink{struct_r_b_node}{RBNode}}*\ x);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ fixInsert(\mbox{\hyperlink{struct_r_b_node}{RBNode}}*\ z);}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{struct_r_b_node}{RBNode}}*\ findNode(\mbox{\hyperlink{struct_r_b_node}{RBNode}}*\ node,\ \textcolor{keyword}{const}\ std::string\&\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_r_b_tree_aa0127eced84667918a344ee7739b9811}{clear}}(\mbox{\hyperlink{struct_r_b_node}{RBNode}}*\ node);}
+\DoxyCodeLine{00060\ \};}
+
+\end{DoxyCode}

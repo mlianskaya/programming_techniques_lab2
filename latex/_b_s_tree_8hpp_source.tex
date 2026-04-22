@@ -1,0 +1,41 @@
+\doxysection{BSTree.\+hpp}
+\hypertarget{_b_s_tree_8hpp_source}{}\label{_b_s_tree_8hpp_source}\mbox{\hyperlink{_b_s_tree_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_applicant_8hpp}{Applicant.hpp}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_b_s_t_node}{BSTNode}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_b_s_t_node_aa1a3ac4e10e0f7e0bca2f774b9a01ed2}{key}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ std::vector<Applicant>\ \mbox{\hyperlink{struct_b_s_t_node_a17bebb8a77e0edb34623745ea1b23683}{values}};\ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\ \mbox{\hyperlink{struct_b_s_t_node_ad3749f519572d82177ea184efe84beb2}{left}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\ \mbox{\hyperlink{struct_b_s_t_node_a864a3c35fef3f0ea7bc9b2fd04c985ed}{right}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{struct_b_s_t_node_af75de38d9ee7ce5e865014be98a0166f}{BSTNode}}(\textcolor{keyword}{const}\ std::string\&\ k,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_applicant}{Applicant}}\&\ a)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_b_s_t_node_aa1a3ac4e10e0f7e0bca2f774b9a01ed2}{key}}(k),\ \mbox{\hyperlink{struct_b_s_t_node_ad3749f519572d82177ea184efe84beb2}{left}}(nullptr),\ \mbox{\hyperlink{struct_b_s_t_node_a864a3c35fef3f0ea7bc9b2fd04c985ed}{right}}(nullptr)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_b_s_t_node_a17bebb8a77e0edb34623745ea1b23683}{values}}.push\_back(a);}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_b_s_tree}{BSTree}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_b_s_tree}{BSTree}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_b_s_tree}{\string~BSTree}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_s_tree_a27270747121d16dc710002a0af0c5e83}{insert}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_applicant}{Applicant}}\&\ a);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ std::vector<Applicant>\ \mbox{\hyperlink{class_b_s_tree_a14d33e1105cb8e461e9053bb6ff7a5cb}{find}}(\textcolor{keyword}{const}\ std::string\&\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_s_tree_ad0919806c4c9897579ae0af91c09f012}{clear}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\ root;\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_s_tree_a27270747121d16dc710002a0af0c5e83}{insert}}(\mbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\&\ node,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_applicant}{Applicant}}\&\ a);}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\ findNode(\mbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\ node,\ \textcolor{keyword}{const}\ std::string\&\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_s_tree_ad0919806c4c9897579ae0af91c09f012}{clear}}(\mbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\ node);}
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}

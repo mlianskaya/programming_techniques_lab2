@@ -1,0 +1,101 @@
+\doxysection{Search\+Benchmark.\+cpp File Reference}
+\hypertarget{_search_benchmark_8cpp}{}\label{_search_benchmark_8cpp}\index{SearchBenchmark.cpp@{SearchBenchmark.cpp}}
+
+
+Программа для сравнения времени поиска в различных структурах данных.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include "{}Applicant.\+hpp"{}}\newline
+{\ttfamily \#include "{}BSTree.\+hpp"{}}\newline
+{\ttfamily \#include "{}RBTree.\+hpp"{}}\newline
+{\ttfamily \#include "{}Hash\+Table.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_applicant}{Applicant}} $>$ \mbox{\hyperlink{_search_benchmark_8cpp_a17e991a3b65d2a7a6966debc33ef0a01}{generate\+Applicants}} (size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Генерирует случайный вектор абитуриентов заданного размера. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_applicant}{Applicant}} $>$ \mbox{\hyperlink{_search_benchmark_8cpp_a39571ee3c105f0eaa52ae21506620764}{linear\+Search}} (const vector$<$ \mbox{\hyperlink{class_applicant}{Applicant}} $>$ \&data, const string \&key)
+\begin{DoxyCompactList}\small\item\em Линейный поиск всех вхождений ключа. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Func $>$ }\\double \mbox{\hyperlink{_search_benchmark_8cpp_a359ea4141834059c6f72f7ddd02706b9}{measure\+Time}} (Func \&\&func)
+\begin{DoxyCompactList}\small\item\em Измеряет время выполнения переданной функции. \end{DoxyCompactList}\item 
+\Hypertarget{_search_benchmark_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_search_benchmark_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Программа для сравнения времени поиска в различных структурах данных. 
+
+Реализованы\+: линейный поиск, BST, красно-\/черное дерево, хэш-\/таблица (с улучшенной хэш-\/функцией и простым размером), std\+::multimap. Для каждого размера массива выполняется 10 поисков, время усредняется. Результаты сохраняются в CSV-\/файл. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_search_benchmark_8cpp_a17e991a3b65d2a7a6966debc33ef0a01}\label{_search_benchmark_8cpp_a17e991a3b65d2a7a6966debc33ef0a01} 
+\index{SearchBenchmark.cpp@{SearchBenchmark.cpp}!generateApplicants@{generateApplicants}}
+\index{generateApplicants@{generateApplicants}!SearchBenchmark.cpp@{SearchBenchmark.cpp}}
+\doxysubsubsection{\texorpdfstring{generateApplicants()}{generateApplicants()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_applicant}{Applicant}} $>$ generate\+Applicants (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Генерирует случайный вектор абитуриентов заданного размера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Количество элементов. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор объектов \doxylink{class_applicant}{Applicant}. 
+\end{DoxyReturn}
+\Hypertarget{_search_benchmark_8cpp_a39571ee3c105f0eaa52ae21506620764}\label{_search_benchmark_8cpp_a39571ee3c105f0eaa52ae21506620764} 
+\index{SearchBenchmark.cpp@{SearchBenchmark.cpp}!linearSearch@{linearSearch}}
+\index{linearSearch@{linearSearch}!SearchBenchmark.cpp@{SearchBenchmark.cpp}}
+\doxysubsubsection{\texorpdfstring{linearSearch()}{linearSearch()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_applicant}{Applicant}} $>$ linear\+Search (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_applicant}{Applicant}} $>$ \&}]{data,  }\item[{const string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Линейный поиск всех вхождений ключа. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Вектор данных (не отсортирован). \\
+\hline
+{\em key} & Искомое ФИО. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор копий найденных объектов. 
+\end{DoxyReturn}
+\Hypertarget{_search_benchmark_8cpp_a359ea4141834059c6f72f7ddd02706b9}\label{_search_benchmark_8cpp_a359ea4141834059c6f72f7ddd02706b9} 
+\index{SearchBenchmark.cpp@{SearchBenchmark.cpp}!measureTime@{measureTime}}
+\index{measureTime@{measureTime}!SearchBenchmark.cpp@{SearchBenchmark.cpp}}
+\doxysubsubsection{\texorpdfstring{measureTime()}{measureTime()}}
+{\footnotesize\ttfamily template$<$typename Func $>$ \\
+double measure\+Time (\begin{DoxyParamCaption}\item[{Func \&\&}]{func }\end{DoxyParamCaption})}
+
+
+
+Измеряет время выполнения переданной функции. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Func} & Тип вызываемого объекта. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Функция/лямбда без аргументов. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Время в секундах. 
+\end{DoxyReturn}

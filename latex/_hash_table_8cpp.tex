@@ -1,0 +1,21 @@
+\doxysection{Hash\+Table.\+cpp File Reference}
+\hypertarget{_hash_table_8cpp}{}\label{_hash_table_8cpp}\index{HashTable.cpp@{HashTable.cpp}}
+
+
+Реализация хэш-\/таблицы для хранения абитуриентов.  
+
+
+{\ttfamily \#include "{}Hash\+Table.\+hpp"{}}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Реализация хэш-\/таблицы для хранения абитуриентов. 
+
+Содержит методы\+:
+\begin{DoxyItemize}
+\item hash() – полиномиальная хэш-\/функция с приведением к нижнему регистру;
+\item insert() – вставка элемента с учётом дубликатов и подсчётом коллизий;
+\item find() – поиск всех элементов по ключу;
+\item clear() – очистка таблицы и сброс счётчика коллизий. 
+\end{DoxyItemize}

@@ -1,0 +1,22 @@
+\doxysection{Hash\+Table.\+hpp File Reference}
+\hypertarget{_hash_table_8hpp}{}\label{_hash_table_8hpp}\index{HashTable.hpp@{HashTable.hpp}}
+
+
+Заголовочный файл хэш-\/таблицы для хранения абитуриентов.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}Applicant.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hash_table}{Hash\+Table}}
+\begin{DoxyCompactList}\small\item\em Класс хэш-\/таблицы для быстрого поиска по ключу. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Заголовочный файл хэш-\/таблицы для хранения абитуриентов. 
+
+Реализует хэш-\/таблицу с методом цепочек, где каждая корзина представляет собой отображение (std\+::unordered\+\_\+map) из ключа (ФИО) в вектор значений. Это позволяет эффективно хранить дубликаты и избегать линейного перебора при поиске. 
